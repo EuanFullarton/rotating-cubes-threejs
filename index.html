@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Rotating cubes - three.js</title>
+	<style>
+	body { margin: 0; }
+	canvas { width: 100%; height: 100% }
+</style>
+</head>
+<body>
+	<script src="js/three.js"></script>
+	<script>
+		var scene = new THREE.Scene();
+		var camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+		var renderer = new THREE.WebGLRenderer();
+		renderer.setSize( window.innerWidth, window.innerHeight );
+		document.body.appendChild( renderer.domElement );
+
+		var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+		var geometry2 = new THREE.BoxGeometry( 2, 2, 2 );
+		var geometry3 = new THREE.BoxGeometry( 3, 3, 3 );
+		var geometry4 = new THREE.BoxGeometry( 4, 4, 4 );
+		var geometry5 = new THREE.BoxGeometry( 5, 5, 5 );
+		var geometry6 = new THREE.BoxGeometry( 6, 6, 6 );
+		var geometry7 = new THREE.BoxGeometry( 7, 7, 7 );
+		var geometry8 = new THREE.BoxGeometry( 8, 8, 8 );
+		var geometry9 = new THREE.BoxGeometry( 9, 9, 9 );
+		var geometry10 = new THREE.BoxGeometry( 10, 10, 10 );
+		var geometry11 = new THREE.BoxGeometry( 11, 11, 11 );
+		
+		var material = new THREE.MeshBasicMaterial( { color: 0xFFFFFF, wireframe:true } );
+		var material2 = new THREE.MeshBasicMaterial( { color: 0xDDDDF8, wireframe:true } );
+		var material3 = new THREE.MeshBasicMaterial( { color: 0xD5D5F6, wireframe:true } );
+		var material4 = new THREE.MeshBasicMaterial( { color: 0xCACAF4, wireframe:true } );
+		var material5 = new THREE.MeshBasicMaterial( { color: 0xBDBDF1, wireframe:true } );
+		var material6 = new THREE.MeshBasicMaterial( { color: 0xACACEE, wireframe:true } );
+		var material7 = new THREE.MeshBasicMaterial( { color: 0x9797EA, wireframe:true } );
+		var material8 = new THREE.MeshBasicMaterial( { color: 0x7D7DE5, wireframe:true } );
+		var material9 = new THREE.MeshBasicMaterial( { color: 0x5C5CDE, wireframe:true } );
+		var material10 = new THREE.MeshBasicMaterial( { color: 0x3333D6, wireframe:true } );
+		var material11 = new THREE.MeshBasicMaterial( { color: 0x0000CC, wireframe:true } );
+		
+		var cube = new THREE.Mesh( geometry, material );
+		var cube2 = new THREE.Mesh( geometry2, material2 );
+		var cube3 = new THREE.Mesh( geometry3, material3 );
+		var cube4 = new THREE.Mesh( geometry4, material4 );
+		var cube5 = new THREE.Mesh( geometry5, material5 );
+		var cube6 = new THREE.Mesh( geometry6, material6 );
+		var cube7 = new THREE.Mesh( geometry7, material7 );
+		var cube8 = new THREE.Mesh( geometry8, material8 );
+		var cube9 = new THREE.Mesh( geometry9, material9 );
+		var cube10 = new THREE.Mesh( geometry10, material10 );
+		var cube11 = new THREE.Mesh( geometry11, material11 );
+
+		scene.add( cube );
+		scene.add( cube2 );
+		scene.add( cube3 );
+		scene.add( cube4 );
+		scene.add( cube5 );
+		scene.add( cube6 );
+		scene.add( cube7 );
+		scene.add( cube8 );
+		scene.add( cube9 );
+		scene.add( cube10 );
+		scene.add( cube11 );
+
+		camera.position.z = 15;
+
+		function animate() {
+			requestAnimationFrame( animate );
+			cube.rotation.x += 0.01;
+			cube.rotation.y += 0.01;
+			cube2.rotation.x += 0.0125;
+			cube2.rotation.y += 0.0125;
+			cube3.rotation.y += 0.015;
+			cube4.rotation.x += 0.0175;
+			cube5.rotation.y += 0.02;
+			cube6.rotation.x += 0.0225;
+			cube7.rotation.y += 0.025;
+			cube8.rotation.x += 0.0275;
+			cube9.rotation.y += 0.03;
+			cube10.rotation.x += 0.0325;
+			cube11.rotation.y += 0.035;
+			renderer.render( scene, camera );
+		}
+		animate();
+	</script>
+</body>
+</html>
